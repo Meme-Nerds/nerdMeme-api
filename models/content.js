@@ -1,4 +1,4 @@
-const pool = require('../data/setup');
+const pool = require('../lib/utils/pool');
 
 module.exports = class Content {
   id;
@@ -11,12 +11,12 @@ module.exports = class Content {
     this.content = row.content;
   }
 
-  static async insert(contentType, content) {
+  static async initialInsert(contentType, world, content) {
     const { rows } = await pool.query(
       `INSERT INTO ${contentType} (world, content)
       VALUES ($1, $2)
       RETURNING *`,
-      [content.world, content.content]
+      [world, content]
     );
     return new Content(rows[0]);
   }
