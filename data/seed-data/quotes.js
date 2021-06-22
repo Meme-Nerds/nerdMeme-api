@@ -16,6 +16,16 @@ module.exports = [
   },
   {
     category: 'quotes',
+    world: 'harry-potter',
+    data: ['your a wizard Harry!', 'It\'s Wizard\'s Chess!']
+  },
+  {
+    category: 'quotes',
+    world: 'battlestar-galactica',
+    data: ['This has all happened before, and it will all happen again.']
+  },
+  {
+    category: 'quotes',
     world: 'marvel',
     data: ['Avengers, assemble!', 'I Can Do This All Day.', 'Don\'t make me angry, you wouldn\'t like me when I\'m angry', 'Wakanda forever!', 'I am Iron man.', 'We have a Hulk.', 'I am Groot.', 'We\'re Fighting An Army Of Robots And I Have A Bow And Arrow. None Of This Makes Sense.']
   },

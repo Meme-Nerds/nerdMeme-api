@@ -20,4 +20,56 @@ module.exports = class Content {
     );
     return new Content(rows[0]);
   }
+
+  static async getSetting(world) {
+    const { rows } = await pool.query(
+      `SELECT content AS setting
+      FROM settings
+      WHERE world=$1
+      ORDER BY RANDOM()
+      LIMIT 1`,
+      [world]
+    );
+    console.log(rows[0], world, 'model')
+    return rows[0];
+  }
+
+  static async getImage(world) {
+    const { rows } = await pool.query(
+      `SELECT content AS image
+      FROM images
+      WHERE world=$1
+      ORDER BY RANDOM()
+      LIMIT 1`,
+      [world]
+    );
+    console.log(rows[0], world, 'model2')
+    return rows[0];
+  }
+
+  static async getQuote(world) {
+    const { rows } = await pool.query(
+      `SELECT content AS quote
+      FROM quotes
+      WHERE world=$1
+      ORDER BY RANDOM()
+      LIMIT 1`,
+      [world]
+    );
+    console.log(rows[0], world, 'model3')
+    return rows[0];
+  }
+
+  static async getAuthor(world) {
+    const { rows } = await pool.query(
+      `SELECT content AS author
+      FROM authors
+      WHERE world=$1
+      ORDER BY RANDOM()
+      LIMIT 1`,
+      [world]
+    );
+    console.log(rows[0], world, 'model4')
+    return rows[0];
+  }
 };
