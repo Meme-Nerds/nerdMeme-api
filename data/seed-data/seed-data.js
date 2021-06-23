@@ -1,4 +1,4 @@
-const Content = require('../../models/Content');
+const Content = require('../../lib/models/content');
 const pool = require('../../lib/utils/pool');
 const fs = require('fs');
 const settings = require('./settings');
